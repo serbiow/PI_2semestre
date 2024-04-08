@@ -23,13 +23,15 @@ export async function createUsuario(
     nome: z.string().min(1),
     email: z.string().min(1),
     senha: z.string().min(1),
-    telefone: z.string().min(1)
+    telefone: z.string().min(1),
+    cpf: z.string().min(1)
   });
   const parse = schema.safeParse({
     nome: formData.get("nome"),
     email: formData.get("email"),
     senha: formData.get("senha"),
-    telefone: formData.get("telefone")
+    telefone: formData.get("telefone"),
+    cpf: formData.get("cpf")
   });
 
   if (!parse.success) {
@@ -39,10 +41,7 @@ export async function createUsuario(
   const data = parse.data;
 
   try {
-    await sql`
-      INSERT INTO usuario (usu_str_nome, usu_str_email, usu_str_senha, usu_str_telefone)
-      VALUES (${data.nome, data.email, data.senha, data.telefone})
-    `;
+    await sql`INSERT INTO USUARIO(USU_STR_NOME, USU_STR_EMAIL, USU_STR_SENHA, USU_STR_TEL, USU_STR_CPF) VALUES(${data.nome}, ${data.email}, ${data.senha}, ${data.telefone}, ${data.cpf})`;
 
     revalidatePath("/");
     return { message: `Usuário ${data.nome} adicionado` };
@@ -59,17 +58,17 @@ export async function deleteUsuario(
 ) {
   const schema = z.object({
     id: z.string().min(1),
-    nome: z.string().min(1)
+    nome: z.string().min(1),
   });
   const data = schema.parse({
     id: formData.get("id"),
-    nome: formData.get("nome")
+    nome: formData.get("nome"),
   });
 
   try {
     await sql`
-      DELETE FROM usuario
-      WHERE usu_int_id = ${data.id};
+      DELETE FROM USUARIO
+      WHERE USU_INT_ID = ${data.id};
     `;
 
     revalidatePath("/");

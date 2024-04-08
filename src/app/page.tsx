@@ -1,10 +1,14 @@
-import { sql } from '@vercel/postgres';
-import { AddForm } from '@/app/api/add-form';
-import { DeleteForm } from './api/delete-form';
+import postgres from "postgres";
+
+import { AddForm } from "@/app/api/add-form";
+import { DeleteForm } from "@/app/api/delete-form";
+
+let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
+  ssl: "allow",
+});
 
 export default async function Home(){
-    let data = await sql `SELECT * FROM usuario`;
-    const { rows: usuarios } = data;
+    let usuarios = await sql`SELECT * FROM USUARIO`;
 
     return(
         <main className='flex min-h-screen flex-col items-center justify-between p-24'>
@@ -12,13 +16,13 @@ export default async function Home(){
             <AddForm/>
             <ul>
                 {usuarios.map((usuario) => (
-                    <li key = {usuario.id}>
-                        {usuario.nome}
-                        {usuario.email}
-                        {usuario.senha}
-                        {usuario.telefone}
-                        {usuario.cpf}
-                        <DeleteForm id={usuario.id} nome={usuario.nome}/>
+                    <li key = {usuario.usu_int_id}>
+                        {usuario.usu_str_nome}<br/>
+                        {usuario.usu_str_email}<br/>
+                        {usuario.usu_str_senha}<br/>
+                        {usuario.usu_str_tel}<br/>
+                        <DeleteForm id={usuario.usu_int_id} nome={usuario.usu_str_nome}/>
+                        <br/>
                     </li>
                 ))}
             </ul>
