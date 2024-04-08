@@ -8,11 +8,6 @@ let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
   ssl: "allow",
 });
 
-// CREATE TABLE todos (
-//   id SERIAL PRIMARY KEY,
-//   text TEXT NOT NULL
-// );
-
 export async function createUsuario(
   prevState: {
     message: string;
