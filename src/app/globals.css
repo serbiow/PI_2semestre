@@ -30,4 +30,7 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .divbg{
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Ftecnoblog.net%2Fnoticias%2Fdesenvolvedor-descobre-que-ia-que-gera-imagens-e-otima-para-comprimir-fotos%2F&psig=AOvVaw1dZjnO6vU-0UNaoj0rTLpc&ust=1711684845378000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPCoo4uJloUDFQAAAAAdAAAAABAE");
+  }
 }
