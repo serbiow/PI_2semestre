@@ -7,7 +7,7 @@ export default async function Home(){
     const { rows: usuarios } = data;
 
     return(
-        <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+        <main>
             <h1>Usuários</h1>
             <AddForm/>
             <ul>
