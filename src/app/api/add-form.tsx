@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormState, useFormStatus } from "react-dom";
-import { createUsuario } from "@/app/api/insert-user/actions";
+import { createUsuario } from "@/app/lib/actions";
 
 const initialState = {
     message: "",

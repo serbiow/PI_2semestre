@@ -36,4 +36,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Authenticate
-https://nextjs-org.translate.goog/learn/dashboard-app/adding-authentication?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_hist=true
+https://nextjs.org/learn/dashboard-app/adding-authentication
+
+## Exemplo documentação
+https://github.com/vercel/next-learn/tree/main/dashboard/final-example

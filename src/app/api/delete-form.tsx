@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormState, useFormStatus } from "react-dom";
-import { deleteUsuario } from "@/app/api/insert-user/actions";
+import { deleteUsuario } from "@/app/lib/actions";
 
 const initialState = {
   message: "",

@@ -20,7 +20,7 @@ export default function cadastro() {
 
             {/* Formulario */}
 
-            <AddForm/>
+            <AddForm />
 
             {/* Registro */}
 
