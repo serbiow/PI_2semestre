@@ -2,12 +2,12 @@ export default function Login() {
   return (
     <main>
       <section className="bg-[#010E21] min-h-screen flex items-center justify-center">
+        <div className="bg-[#E7C7A1] flex rounded-2xl shadow-lg min-h-96 min-w-fit">
 
-<div className="bg-[#E7C7A1] flex rounded-2xl shadow-lg min-h-96 min-w-fit"> 
-  <div className="px-16 pt-10 py-10">
-    <h2 className="font-bold text-2xl ">Cadastro</h2>
-    <p className="">Se ainda não é cliente cadastre-se</p>
 
+          <div className="px-16 pt-10 py-10">
+            <h2 className="font-bold text-2xl ">Login</h2>
+            <p className="">Se já é um cliente, realize o Login</p>
 
             {/* Formulario */}
 
@@ -46,7 +46,7 @@ export default function Login() {
 
             <div className=" py-4 text-xs flex justify-between">
               <p className="pt-3 py-3">Não possui conta ainda?</p>
-              <a><button className=" rounded-xl pt-3 p-5 py-3 justify-center bg-[#010E21] text-[#E7C7A1] hover:bg-[#445a7e] transition-all">Registre-se</button></a>
+              <a href="cadastro"><button className=" rounded-xl pt-3 p-5 py-3 justify-center bg-[#010E21] text-[#E7C7A1] hover:bg-[#445a7e] transition-all">Registre-se</button></a>
             </div>
 
 
