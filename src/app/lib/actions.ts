@@ -3,8 +3,6 @@
 import { revalidatePath } from "next/cache";
 import postgres from "postgres";
 import { z } from "zod";
-import { signIn } from "@/auth";
-import { AuthError } from 'next-auth';
 
 let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
   ssl: "allow",
@@ -72,24 +70,5 @@ export async function deleteUsuario(
     return { message: `Usuário ${data.nome} deletado` };
   } catch (e) {
     return { message: "Falha ao deletar usuário" };
-  }
-}
-
-export async function authenticate(
-  prevState: string | undefined,
-  formData: FormData,
-) {
-  try {
-    await signIn('credentials', formData);
-  } catch (error) {
-    if (error instanceof AuthError) {
-      switch (error.type) {
-        case 'CredentialsSignin':
-          return 'Invalid credentials.';
-        default:
-          return 'Something went wrong.';
-      }
-    }
-    throw error;
   }
 }
