@@ -1,4 +1,4 @@
-import { LoginBtn } from "../api/login-btn";
+import { LoginBtn } from "../api/signIn-btn";
 
 export default function Login() {
   return (

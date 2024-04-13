@@ -7,7 +7,7 @@ let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
   ssl: "allow",
 });
 
-export default async function Home(){
+export default async function Crud(){
     let usuarios = await sql`SELECT * FROM USUARIO`;
 
     return(
